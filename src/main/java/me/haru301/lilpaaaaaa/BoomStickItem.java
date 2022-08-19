@@ -26,12 +26,14 @@ public class BoomStickItem extends Item
         super(properties);
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Override
     public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity player, Hand hand)
     {
-        shootSonicBoom(player.getEyePosition(0), player.getLookVec());
-        player.playSound(ModSounds.LILPA.get(), SoundCategory.VOICE, 1, 1);
+        if(world.isRemote())
+        {
+            shootSonicBoom(player.getEyePosition(0), player.getLookVec());
+            player.playSound(ModSounds.LILPA.get(), SoundCategory.VOICE, 1, 1);
+        }
         return super.onItemRightClick(world, player, hand);
     }
 
