@@ -11,6 +11,7 @@ public class ModSounds
     public static final DeferredRegister<SoundEvent> REGISTER = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, Lilpa.MOD_ID);
 
     public static final RegistryObject<SoundEvent> LILPA = register("lilpa");
+    public static final RegistryObject<SoundEvent> SERVERSIDE = register("serverside");
 
     private static RegistryObject<SoundEvent> register(String key)
     {

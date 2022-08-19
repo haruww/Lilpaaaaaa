@@ -1,5 +1,7 @@
 package me.haru301.lilpaaaaaa;
 
+import me.haru301.lilpaaaaaa.packet.PacketHandler;
+import me.haru301.lilpaaaaaa.packet.SonicBoomPacket;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -28,20 +30,21 @@ public class BoomStickItem extends Item
     @Override
     public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity player, Hand hand)
     {
-        shootSonicBoom(world, player.getEyePosition(0), player.getLookVec(), player);
-        player.playSound(ModSounds.LILPA.get(), SoundCategory.MASTER, 1, 1);
+        shootSonicBoom(player.getEyePosition(0), player.getLookVec());
+        player.playSound(ModSounds.LILPA.get(), SoundCategory.VOICE, 1, 1);
         return super.onItemRightClick(world, player, hand);
     }
 
-    private void shootSonicBoom(World world, Vector3d eyeVec3, Vector3d lookVec3, Entity p)
+    private void shootSonicBoom(Vector3d eyeVec3, Vector3d lookVec3)
     {
         Vector3d vec3 = eyeVec3;
-        for(int i = 1; i < 50; i++)
+        for(int i = 1; i < 100; i++)
         {
             Vector3d vec33 = vec3.add(lookVec3.scale(i));
-            for(Entity e : world.getEntitiesWithinAABBExcludingEntity(p, new AxisAlignedBB(vec33.subtract(1, 1, 1), vec33.add(1, 1, 1))))
-                e.attackEntityFrom(new DamageSource(Lilpa.MOD_ID + "_sonic_boom"), 50);
-            world.addParticle(ModParticle.SONIC_BOOM.get(), true, vec33.x, vec33.y, vec33.z, 1, 0, 0);
+            PacketHandler.INSTANCE.sendToServer(new SonicBoomPacket(vec33.x, vec33.y, vec33.z));
+            /*for(Entity e : world.getEntitiesWithinAABBExcludingEntity(p, new AxisAlignedBB(vec33.subtract(1, 1, 1), vec33.add(1, 1, 1))))
+                e.attackEntityFrom(new DamageSource(Lilpa.MOD_ID + "_sonic_boom"), 100);
+            world.addParticle(ModParticle.SONIC_BOOM.get(), true, vec33.x, vec33.y, vec33.z, 1, 0, 0);*/
         }
     }
 }
