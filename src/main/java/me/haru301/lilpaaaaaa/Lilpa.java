@@ -21,6 +21,8 @@ public class Lilpa
         bus.addListener(this::onClientSetup);
         bus.addListener(this::onCommonSetup);
         ModParticle.REGISTER.register(bus);
+        ModItems.REGISTER.register(bus);
+        ModSounds.REGISTER.register(bus);
     }
 
     private void onCommonSetup(FMLCommonSetupEvent event)

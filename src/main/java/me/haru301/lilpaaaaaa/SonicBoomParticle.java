@@ -3,8 +3,10 @@ package me.haru301.lilpaaaaaa;
 import net.minecraft.client.particle.*;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.world.ClientWorld;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.particles.BasicParticleType;
+import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
@@ -20,7 +22,14 @@ public class SonicBoomParticle extends SpriteTexturedParticle
         super(world, x, y, z, motionX, motionY, motionZ);
         this.spriteSetWithAge = spriteSetWithAge;
         this.maxAge =16;
+        this.particleScale *= 8.0F; //TODO make user adjustment
         this.selectSpriteWithAge(spriteSetWithAge);
+    }
+
+    @Override
+    public float getScale(float p_217561_1_)
+    {
+        return this.particleScale;
     }
 
     @Override
