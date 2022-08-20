@@ -1,5 +1,8 @@
 package me.haru301.lilpaaaaaa;
 
+import me.haru301.lilpaaaaaa.init.ModItems;
+import me.haru301.lilpaaaaaa.init.ModParticle;
+import me.haru301.lilpaaaaaa.init.ModSounds;
 import me.haru301.lilpaaaaaa.packet.PacketHandler;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;

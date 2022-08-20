@@ -1,5 +1,7 @@
-package me.haru301.lilpaaaaaa;
+package me.haru301.lilpaaaaaa.init;
 
+import me.haru301.lilpaaaaaa.Lilpa;
+import me.haru301.lilpaaaaaa.SonicBoomParticle;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;

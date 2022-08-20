@@ -1,5 +1,6 @@
-package me.haru301.lilpaaaaaa;
+package me.haru301.lilpaaaaaa.init;
 
+import me.haru301.lilpaaaaaa.Lilpa;
 import net.minecraft.particles.BasicParticleType;
 import net.minecraft.particles.ParticleType;
 import net.minecraftforge.fml.RegistryObject;

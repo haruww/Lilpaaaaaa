@@ -1,5 +1,6 @@
-package me.haru301.lilpaaaaaa;
+package me.haru301.lilpaaaaaa.init;
 
+import me.haru301.lilpaaaaaa.Lilpa;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraftforge.fml.RegistryObject;

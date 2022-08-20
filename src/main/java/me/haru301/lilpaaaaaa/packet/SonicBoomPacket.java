@@ -1,8 +1,8 @@
 package me.haru301.lilpaaaaaa.packet;
 
 import me.haru301.lilpaaaaaa.Lilpa;
-import me.haru301.lilpaaaaaa.ModParticle;
-import me.haru301.lilpaaaaaa.ModSounds;
+import me.haru301.lilpaaaaaa.init.ModParticle;
+import me.haru301.lilpaaaaaa.init.ModSounds;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -58,6 +58,7 @@ public class SonicBoomPacket
             for(ServerPlayerEntity entity : sender.getServer().getPlayerList().getPlayers())
                 sender.getServerWorld().spawnParticle(entity, ModParticle.SONIC_BOOM.get(), true, vec3.x, vec3.y, vec3.z, 1, 0, 0,0, 0);
             sender.getServerWorld().playSound(sender, sender.getPosition(), ModSounds.SERVERSIDE.get(), SoundCategory.VOICE, 1, 1);
+            //TODO Sound Fix
             //sender.getServerWorld().addParticle(ModParticle.SONIC_BOOM.get(), true, vec3.x, vec3.y, vec3.z, 1, 0, 0);
         });
         ctx.get().setPacketHandled(true);
