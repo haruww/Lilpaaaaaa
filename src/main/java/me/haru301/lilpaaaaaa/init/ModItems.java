@@ -1,6 +1,6 @@
 package me.haru301.lilpaaaaaa.init;
 
-import me.haru301.lilpaaaaaa.BoomStickItem;
+import me.haru301.lilpaaaaaa.item.BoomStickItem;
 import me.haru301.lilpaaaaaa.Lilpa;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;

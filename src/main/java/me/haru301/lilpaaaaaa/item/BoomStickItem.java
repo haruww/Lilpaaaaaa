@@ -1,4 +1,4 @@
-package me.haru301.lilpaaaaaa;
+package me.haru301.lilpaaaaaa.item;
 
 import me.haru301.lilpaaaaaa.init.ModSounds;
 import me.haru301.lilpaaaaaa.packet.PacketHandler;
