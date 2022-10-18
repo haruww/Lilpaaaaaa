@@ -30,7 +30,7 @@ public class BoomStickItem extends Item
         return super.onItemRightClick(world, player, hand);
     }
 
-    private void shootSonicBoom(Vector3d eyeVec3, Vector3d lookVec3)
+    public static void shootSonicBoom(Vector3d eyeVec3, Vector3d lookVec3)
     {
         Vector3d vec3 = eyeVec3;
         for(int i = 1; i < 100; i++)

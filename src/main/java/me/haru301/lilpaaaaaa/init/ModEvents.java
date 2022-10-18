@@ -3,6 +3,7 @@ package me.haru301.lilpaaaaaa.init;
 import me.haru301.lilpaaaaaa.Lilpa;
 import me.haru301.lilpaaaaaa.SonicBoomParticle;
 import net.minecraft.client.Minecraft;
+import net.minecraft.server.MinecraftServer;
 import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;

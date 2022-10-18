@@ -46,18 +46,17 @@ public class SonicBoomPacket
     public static void handle(SonicBoomPacket msg, Supplier<NetworkEvent.Context> ctx)
     {
         ctx.get().enqueueWork(() -> {
-            ServerPlayerEntity sender = ctx.get().getSender();
             Vector3d vec3 = new Vector3d(msg.x, msg.y, msg.z);
 
-            for(Entity e : sender.getServerWorld().getEntitiesWithinAABBExcludingEntity(sender, new AxisAlignedBB(vec3.subtract(1, 1, 1), vec3.add(1, 1, 1))))
+            for(Entity e : ctx.get().getSender().getServerWorld().getEntitiesWithinAABBExcludingEntity(null, new AxisAlignedBB(vec3.subtract(1, 1, 1), vec3.add(1, 1, 1))))
             {
                 if(e instanceof ItemEntity)
                     continue;
                 e.attackEntityFrom(new DamageSource(Lilpa.MOD_ID + "_sonic_boom"), 15);
             }
-            for(ServerPlayerEntity entity : sender.getServer().getPlayerList().getPlayers())
-                sender.getServerWorld().spawnParticle(entity, ModParticle.SONIC_BOOM.get(), true, vec3.x, vec3.y, vec3.z, 1, 0, 0,0, 0);
-            sender.getServerWorld().playSound(sender, sender.getPosition(), ModSounds.SERVERSIDE.get(), SoundCategory.VOICE, 1, 1);
+            for(ServerPlayerEntity entity : ctx.get().getSender().getServer().getPlayerList().getPlayers())
+                ctx.get().getSender().getServerWorld().spawnParticle(entity, ModParticle.SONIC_BOOM.get(), true, vec3.x, vec3.y, vec3.z, 1, 0, 0,0, 0);
+            ctx.get().getSender().getServerWorld().playSound(null, ctx.get().getSender().getPosition(), ModSounds.SERVERSIDE.get(), SoundCategory.VOICE, 1, 1);
             //TODO Sound Fix
             //sender.getServerWorld().addParticle(ModParticle.SONIC_BOOM.get(), true, vec3.x, vec3.y, vec3.z, 1, 0, 0);
         });

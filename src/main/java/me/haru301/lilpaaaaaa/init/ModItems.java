@@ -2,6 +2,7 @@ package me.haru301.lilpaaaaaa.init;
 
 import me.haru301.lilpaaaaaa.item.BoomStickItem;
 import me.haru301.lilpaaaaaa.Lilpa;
+import me.haru301.lilpaaaaaa.item.FireballStickItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraftforge.fml.RegistryObject;
@@ -13,4 +14,6 @@ public class ModItems
     public static final DeferredRegister<Item> REGISTER = DeferredRegister.create(ForgeRegistries.ITEMS, Lilpa.MOD_ID);
 
     public static final RegistryObject<Item> BOOM_STICK = REGISTER.register( "boom_stick", () -> new BoomStickItem(new Item.Properties().group(ItemGroup.TOOLS).maxStackSize(1)));
+    public static final RegistryObject<Item> FIREBALL_STICK = REGISTER.register( "fireball_stick", () -> new FireballStickItem(new Item.Properties().group(ItemGroup.TOOLS).maxStackSize(1)));
+
 }
