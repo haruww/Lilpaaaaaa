@@ -56,7 +56,7 @@ public class SonicBoomPacket
             }
             for(ServerPlayerEntity entity : ctx.get().getSender().getServer().getPlayerList().getPlayers())
                 ctx.get().getSender().getServerWorld().spawnParticle(entity, ModParticle.SONIC_BOOM.get(), true, vec3.x, vec3.y, vec3.z, 1, 0, 0,0, 0);
-            ctx.get().getSender().getServerWorld().playSound(null, ctx.get().getSender().getPosition(), ModSounds.SERVERSIDE.get(), SoundCategory.VOICE, 1, 1);
+            ctx.get().getSender().getServerWorld().playSound(null, ctx.get().getSender().getPosition(), ModSounds.LILPA.get(), SoundCategory.VOICE, 1, 1);
             //TODO Sound Fix
             //sender.getServerWorld().addParticle(ModParticle.SONIC_BOOM.get(), true, vec3.x, vec3.y, vec3.z, 1, 0, 0);
         });

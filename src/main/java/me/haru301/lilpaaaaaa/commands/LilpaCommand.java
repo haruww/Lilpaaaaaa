@@ -44,7 +44,7 @@ public class LilpaCommand
             {
                 Vector3d vec33 = boomPos.add(normalized.scale(i));
 
-                for(Entity e : target.getServerWorld().getEntitiesWithinAABBExcludingEntity(null, new AxisAlignedBB(vec33.subtract(1, 1, 1), normalized.add(1, 1, 1))))
+                for(Entity e : target.getServerWorld().getEntitiesWithinAABBExcludingEntity(null, new AxisAlignedBB(vec33.subtract(1, 1, 1), vec33.add(1, 1, 1))))
                 {
                     if(e instanceof ItemEntity)
                         continue;
@@ -53,7 +53,7 @@ public class LilpaCommand
                 for(ServerPlayerEntity entity : target.getServer().getPlayerList().getPlayers())
                     world.spawnParticle(entity, ModParticle.SONIC_BOOM.get(), true, vec33.x, vec33.y, vec33.z, 1, 0, 0,0, 0);
             }
-            world.playSound(null, new BlockPos(boomPos), ModSounds.SERVERSIDE.get(), SoundCategory.VOICE, 1, 1);
+            world.playSound(null, new BlockPos(boomPos), ModSounds.SERVERSIDE.get(), SoundCategory.HOSTILE, 7, 1);
 
             return 0;
         })));
